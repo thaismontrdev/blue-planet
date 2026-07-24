@@ -26,6 +26,26 @@ subtitulo = tk.Label(
 
 subtitulo.pack(pady=(0, 40))
 
+planeta = tk.Canvas(
+    janela,
+    width=220,
+    height=220,
+    bg='#000000',
+    highlightthickness=0
+)
+
+planeta.pack()
+
+planeta.create_oval(
+    20,
+    20,
+    200,
+    200,
+    fill='#1E88E5',
+    outline='#42A5F5',
+    width=3
+)
+
 botao = tk.Button(
     janela,
     text="Explorar o Planeta",
