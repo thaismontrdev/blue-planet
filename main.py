@@ -13,4 +13,12 @@ titulo = tk.Label(
 
 titulo.pack(pady=20)
 
+botao = tk.Button(
+    janela,
+    text="Explorar o Planeta",
+    font=("Arial", 16),
+)
+
+botao.pack(pady=10)
+
 janela.mainloop()
