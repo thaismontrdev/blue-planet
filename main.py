@@ -28,8 +28,8 @@ subtitulo.pack(pady=(0, 40))
 
 planeta = tk.Canvas(
     janela,
-    width=220,
-    height=220,
+    width=260,
+    height=260,
     bg='#000000',
     highlightthickness=0
 )
@@ -37,13 +37,58 @@ planeta = tk.Canvas(
 planeta.pack()
 
 planeta.create_oval(
+    10,
+    10,
+    250,
+    250,
+    fill='#0D47A1',
+    outline=''
+)
+
+planeta.create_oval(
     20,
     20,
-    200,
-    200,
+    240,
+    240,
+    fill='#1565C0',
+    outline=''
+)
+
+planeta.create_oval(
+    40,
+    40,
+    220,
+    220,
     fill='#1E88E5',
     outline='#42A5F5',
     width=3
+)
+
+planeta.create_oval(
+    75,
+    80,
+    120,
+    120,
+    fill='#43A047',
+    outline=''
+)
+
+planeta.create_oval(
+    135,
+    95,
+    175,
+    145,
+    fill='#43A047',
+    outline=''
+)
+
+planeta.create_oval(
+    95,
+    145,
+    140,
+    180,
+    fill='#43A047',
+    outline=''
 )
 
 botao = tk.Button(
