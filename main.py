@@ -6,28 +6,39 @@ janela.title("Blue Planet")
 janela.geometry("900x600")
 janela.configure(bg='#000000')
 
-titulo = tk.Label(
+container = tk.Frame(
     janela,
+    bg='#000000'
+)
+
+container.place(
+    relx=0.5,
+    rely=0.5,
+    anchor='center'
+)
+
+titulo = tk.Label(
+    container,
     text="Blue Planet",
     font=("Montserrat", 28, "bold"),
     bg='#000000',
     fg='#FFFFFF'
 )
 
-titulo.pack(pady=(35, 5))
+titulo.pack(pady=(0, 5))
 
 subtitulo = tk.Label(
-    janela,
+    container,
     text="Explore our world",
     font=("Montserrat", 12, 'italic'),
     bg="#000000",
     fg="#7A7A7A"
 )
 
-subtitulo.pack(pady=(0, 40))
+subtitulo.pack(pady=(0, 25))
 
 planeta = tk.Canvas(
-    janela,
+    container,
     width=260,
     height=260,
     bg='#000000',
@@ -92,7 +103,7 @@ planeta.create_oval(
 )
 
 botao = tk.Button(
-    janela,
+    container,
     text="Explorar o Planeta",
     font=("Montserrat", 13, "bold"),
     bg='#121212',
@@ -100,11 +111,11 @@ botao = tk.Button(
     activebackground='#1E1E1E',
     activeforeground='#FFFFFF',
     relief='flat',
-    padx=30,
+    padx=20,
     pady=10,
     cursor='hand2'
 )
 
-botao.pack()
+botao.pack(pady=(50, 0))
 
 janela.mainloop()
