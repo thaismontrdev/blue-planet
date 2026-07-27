@@ -18,4 +18,8 @@ VELOCIDADE_ROTACAO = 10
 def update():
     globo.rotation_y += VELOCIDADE_ROTACAO * time.dt
 
+if mouse.left:
+    globo.rotation_y -= mouse.velocity[0] * VELOCIDADE_MOUSE
+    globo.rotation_x += mouse.velocity[1] * VELOCIDADE_MOUSE
+
 app.run()
