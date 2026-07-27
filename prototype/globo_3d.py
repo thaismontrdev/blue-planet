@@ -7,7 +7,7 @@ window.color = color.black
 
 globo = Entity(
     model='sphere',
-    texture='../assets/earth2.jpg',
+    texture='../assets/earth1.jpg',
     scale=2,
 )
 
