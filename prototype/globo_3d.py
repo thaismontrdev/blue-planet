@@ -13,7 +13,9 @@ globo = Entity(
 
 editor_camera = EditorCamera()
 
+VELOCIDADE_ROTACAO = 10
+
 def update():
-    globo.rotation_y += 10 * time.dt
+    globo.rotation_y += VELOCIDADE_ROTACAO * time.dt
 
 app.run()
