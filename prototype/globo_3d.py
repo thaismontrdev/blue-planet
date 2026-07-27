@@ -10,4 +10,6 @@ globo = Entity(
     scale=2,
 )
 
+editor_camera = EditorCamera()
+
 app.run()
