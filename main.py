@@ -5,6 +5,12 @@ janela = tk.Tk()
 def explorar_planeta():
     pass
 
+def entrar_botao(event):
+    event.widget.config(bg='#2A2A2A')
+
+def sair_botao(event):
+    event.widget.config(bg=event.widget.cor_original)
+   
 janela.title("Blue Planet")
 janela.geometry("900x600")
 janela.configure(bg='#000000')
@@ -129,7 +135,12 @@ botao = tk.Button(
     command=explorar_planeta,
 )
 
+botao.cor_original = '#1E88E5'
+
 botao.pack(pady=(50, 0))
+
+botao.bind('<Enter>', entrar_botao)
+botao.bind('<Leave>', sair_botao)
 
 botao_paises = tk.Button(
     container,
@@ -146,6 +157,11 @@ botao_paises = tk.Button(
     cursor='hand2'
 )
 
+botao_paises.cor_original = '#1A1A1A'
+
 botao_paises.pack(pady=(15, 0))
+
+botao_paises.bind('<Enter>', entrar_botao)
+botao_paises.bind('<Leave>', sair_botao)
 
 janela.mainloop()
