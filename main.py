@@ -11,7 +11,9 @@ janela.configure(bg='#000000')
 
 container = tk.Frame(
     janela,
-    bg='#000000'
+    bg='#111111',
+    padx=40,
+    pady=40
 )
 
 container.place(
@@ -20,11 +22,16 @@ container.place(
     anchor='center'
 )
 
+container.configure(
+    highlightbackground='#222222',
+    highlightthickness=2
+)
+
 titulo = tk.Label(
     container,
     text="Blue Planet",
     font=("Montserrat", 28, "bold"),
-    bg='#000000',
+    bg='#111111',
     fg='#FFFFFF'
 )
 
@@ -34,7 +41,7 @@ subtitulo = tk.Label(
     container,
     text="Explore our world",
     font=("Montserrat", 12, 'italic'),
-    bg="#000000",
+    bg="#111111",
     fg="#7A7A7A"
 )
 
@@ -44,7 +51,7 @@ planeta = tk.Canvas(
     container,
     width=260,
     height=260,
-    bg='#000000',
+    bg='#111111',
     highlightthickness=0
 )
 
