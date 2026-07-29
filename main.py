@@ -15,6 +15,28 @@ janela.title("Blue Planet")
 janela.geometry("900x600")
 janela.configure(bg='#000000')
 
+fundo = tk.Canvas(
+    janela,
+    width=900,
+    height=600,
+    highlightthickness=0
+)
+
+fundo.place(
+    x=0,
+    y=0
+)
+
+for i in range(600):
+    cor = f'#{0:02x}{20 + i//15:02x}{50  + i//8:02x}'
+    fundo.create_line(
+        0,
+        i,
+        900,
+        i,
+        fill=cor
+    )
+
 container = tk.Frame(
     janela,
     bg='#111111',
