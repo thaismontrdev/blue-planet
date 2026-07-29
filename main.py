@@ -2,6 +2,9 @@ import tkinter as tk
 
 janela = tk.Tk()
 
+def explorar_planeta():
+    pass
+
 janela.title("Blue Planet")
 janela.geometry("900x600")
 janela.configure(bg='#000000')
@@ -113,9 +116,25 @@ botao = tk.Button(
     relief='flat',
     padx=20,
     pady=10,
-    cursor='hand2'
+    cursor='hand2',
 )
 
 botao.pack(pady=(50, 0))
+
+botao_paises = tk.Button(
+    container,
+    text='Países',
+    font=('Montserrat', 11),
+    bg='#121212',
+    fg='#FFFFFF',
+    activebackground='#1E1E1E',
+    activeforeground='#FFFFFF',
+    relief='flat',
+    padx=20,
+    pady=8,
+    cursor='hand2'
+)
+
+botao_paises.pack(pady=(15, 0))
 
 janela.mainloop()
