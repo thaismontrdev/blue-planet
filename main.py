@@ -17,25 +17,41 @@ janela.configure(bg='#000000')
 
 fundo = tk.Canvas(
     janela,
-    width=900,
-    height=600,
-    highlightthickness=0
+    bg="#000814",
+    highlightthickness=0,
+    bd=0
 )
 
 fundo.place(
-    x=0,
-    y=0
+    relx=0,
+    rely=0,
+    relwidth=1,
+    relheight=1
 )
 
-for i in range(600):
-    cor = f'#{0:02x}{20 + i//15:02x}{50  + i//8:02x}'
-    fundo.create_line(
-        0,
-        i,
-        900,
-        i,
-        fill=cor
-    )
+def desenhar_fundo(event=None):
+    fundo.delete("all")
+
+    largura = janela.winfo_width()
+    altura = janela.winfo_height()
+
+    for y in range(altura):
+        r = 0
+        g = min(255, 15 + y // 18)
+        b = min(255, 40 + y // 6)
+
+        cor = f'#{r:02x}{g:02x}{b:02x}'
+
+        fundo.create_line(
+            0,
+            y,
+            largura,
+            y,
+            fill=cor
+        )
+
+janela.bind("<Configure>", desenhar_fundo)
+desenhar_fundo()
 
 container = tk.Frame(
     janela,
