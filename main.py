@@ -44,9 +44,27 @@ container = tk.Frame(
     pady=40
 )
 
+header = tk.Frame(
+    janela,
+    bg="#0A0A0A",
+    height=55
+)
+
+header.pack(fill="x")
+
+logo = tk.Label(
+    header,
+    text="Blue Planet",
+    font=("Montserrat", 14, "bold"),
+    bg="#0A0A0A",
+    fg="#FFFFFF"
+)
+
+logo.pack(side="left", padx=20, pady=12)
+
 container.place(
     relx=0.5,
-    rely=0.5,
+    rely=0.56,
     anchor='center'
 )
 
