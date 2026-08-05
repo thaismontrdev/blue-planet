@@ -1,6 +1,9 @@
 import tkinter as tk
+import random
 
 janela = tk.Tk()
+
+estrelas = []
 
 def explorar_planeta():
     pass
@@ -49,6 +52,53 @@ def desenhar_fundo(event=None):
             y,
             fill=cor
         )
+
+    # Estrelas
+    estrelas.clear()
+
+    for _ in range(120):
+        x = random.randint(0, largura)
+        y = random.randint(0, altura)
+
+        tamanho = random.choice([1,2])
+
+        estrela = fundo.create_oval(
+            x,
+            y,
+            x + tamanho,
+            y + tamanho,
+            fill="white",
+            outline=""
+        )
+
+        estrelas.append({
+            "id": estrela,
+            "x": x,
+            "y": y,
+            "tamanho": tamanho,
+            "vel": random.uniform(0.2, 0.7)
+        })
+
+def animar_estrelas():
+
+    largura = janela.winfo_width()
+
+    for estrela in estrelas:
+
+        estrela["x"] -= estrela["vel"]
+
+        if estrela["x"] < 0:
+            estrela["x"] = largura
+
+        fundo.coords(
+            estrela["id"],
+            estrela["x"],
+            estrela["y"],
+            estrela["x"] + estrela["tamanho"],
+            estrela["y"] + estrela["tamanho"]
+        )
+
+janela.after(30, animar_estrelas)
 
 janela.bind("<Configure>", desenhar_fundo)
 desenhar_fundo()
